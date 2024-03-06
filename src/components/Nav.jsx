@@ -55,7 +55,7 @@ const Nav = () => {
         </div>
         {nav && (
           <ul
-            className=" flex flex-col justify-center items-center w-full h-full absolute top-0 left-0 bg-gradient-to-b
+            className=" flex flex-col justify-center items-center w-full h-screen absolute top-0 left-0 bg-gradient-to-b
         from-black to-gray-800 text-gray-500 hover:scale-105 duration-200"
           >
             {links.map(({ id, link }) => (
