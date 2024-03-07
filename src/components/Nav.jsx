@@ -1,9 +1,9 @@
-import { useState, React } from "react";
+import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { Link } from "react-scroll";
+import { Link as ScrollLink } from "react-scroll";
 
 const Nav = () => {
-  const [nav, SetNav] = useState(false);
+  const [nav, setNav] = useState(false);
   const links = [
     {
       id: 1,
@@ -21,7 +21,6 @@ const Nav = () => {
       id: 4,
       link: "projects",
     },
-
     {
       id: 5,
       link: "Skills",
@@ -31,44 +30,53 @@ const Nav = () => {
       link: "contact",
     },
   ];
+
   return (
     <>
       <div className="flex justify-between items-center w-full h-20 px-4 text-white fixed bg-black">
-        <div className="text-5xl font-bold font-signature ml-2">Srishti</div>
+      
+        <ScrollLink to="home" smooth duration={200}>
+          <div className="text-5xl font-bold font-signature ml-2 cursor-pointer">
+            Srishti
+          </div>
+        </ScrollLink>
         <ul className="hidden md:flex">
           {links.map(({ id, link }) => (
             <li
               key={id}
               className="px-4 cursor-pointer capitalize font-medium text-slate-200 bg-black hover:scale-105 duration-200"
             >
-              <Link to={link} smooth duration="200">
+              <ScrollLink to={link} smooth duration={200}>
                 {link}
-              </Link>
+              </ScrollLink>
             </li>
           ))}
         </ul>
         <div
-          onClick={() => SetNav(!nav)}
+          onClick={() => setNav(!nav)}
           className="cursor-pointer pr-4 z-10 text-gray-500 md:hidden"
         >
           {nav ? <FaTimes size={30} /> : <FaBars size={30} />}
         </div>
         {nav && (
           <ul
-            className=" flex flex-col justify-center items-center w-full h-screen absolute top-0 left-0 bg-gradient-to-b
-        from-black to-gray-800 text-gray-500 hover:scale-105 duration-200"
+            className="flex flex-col justify-center items-center w-full h-screen absolute top-0 left-0 bg-gradient-to-b from-black to-gray-800 text-gray-500 hover:scale-105 duration-200"
           >
             {links.map(({ id, link }) => (
               <li
                 key={id}
                 className="px-4 cursor-pointer capitalize py-6 text-4xl"
               >
-                <Link onClick={()=>{
-                  SetNav(!nav)
-                }}
-                 to={link} smooth duration="200">
+                <ScrollLink
+                  onClick={() => {
+                    setNav(!nav);
+                  }}
+                  to={link}
+                  smooth
+                  duration={200}
+                >
                   {link}
-                </Link>
+                </ScrollLink>
               </li>
             ))}
           </ul>
@@ -77,4 +85,5 @@ const Nav = () => {
     </>
   );
 };
+
 export default Nav;
