@@ -1,6 +1,5 @@
 import Nav from "./components/Nav";
 import "./App.css";
-import Welcome from "./components/Welcome"
 import Home from "./components/Home";
 import About from "./components/About"
 import Social from "./components/Social";
@@ -26,19 +25,6 @@ function App() {
     </>
   );
 }
-{
-  /* <div   style={{
-      backgroundImage: `url(${backgroundImage})`,
-      backgroundSize: 'cover', 
-      backgroundAttachment:'scroll',
-      backgroundPosition: 'center', 
-      width: '100%',
-      height: '100vh',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-    }}>
-      <div> */
-}
+
 
 export default App;
