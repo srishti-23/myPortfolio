@@ -1,5 +1,7 @@
 import React from "react";
 import todo from "../images/todo.jpg"
+import myntra from "../images/myntra-clone.png"
+import travel from "../images/travel.png"
 const project = [
   {
     id: 1,
@@ -8,23 +10,19 @@ const project = [
   },
   {
     id: 2,
-    src: todo,
-    child:todo,
-    href:'https://list23.netlify.app/'
+    src: myntra,
+    child:myntra,
+    href:'https://cloneofmyntra.netlify.app/products'
 
   },
   {
     id: 3,
-    src: todo,
-    href:'https://list23.netlify.app/'
+    src: travel,
+    child:travel,
+    href:'https://exploretgotrip.netlify.app/'
 
   },
-  {
-    id: 4,
-    src: todo,
-    href:'https://list23.netlify.app/'
-
-  },
+ 
 ];
 
 const Projects = () => {
